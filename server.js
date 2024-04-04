@@ -107,3 +107,27 @@ methods.invalid = async function (request) {
 };
 
 const pipeStream = promisify(pipeline);
+
+
+/*
+https://replit.com/join/txzpqgaasa-fallentiger101
+To test this server, you can use a web browser to access it at http://localhost:8000. You can use the following commands to test all the uses of the server:
+
+GET / - Get the contents of the root directory. 
+PUT /example.txt - Write the contents of the example.txt file.
+DELETE /example.txt - Delete the example.txt file.
+MKCOL /newdir - Create a new directory named newdir.
+To test:
+
+1. curl http://localhost:8000/file.txt
+This will use GET and give no output as the file has not been created yet.
+2. curl -X PUT -d "Hello, World!" http://localhost:8000/file.txt
+PUT creates a file named file.txt with the contents "Hello, World!".
+3. curl -X DELETE http://localhost:8000/file.txt
+DELETE deletes the file.txt file.
+4. curl -X MKCOL http://localhost:8000/newdir
+MKCOL creates a new directory named newdir.
+5. Error Handling:
+curl -X POST http://localhost:8000/file.txt
+This will return a 405 error as POST is not supported.
+*/
